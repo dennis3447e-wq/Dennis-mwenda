@@ -1,0 +1,435 @@
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Love ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffd6e7, #fff0f6, #ffc1d9);
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    /* FLOATING BACKGROUND */
+    .hearts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .hearts span {
+      position: absolute;
+      bottom: -60px;
+      font-size: 30px;
+      animation: float 8s linear infinite;
+    }
+
+    .hearts span:nth-child(1) {
+      left: 10%;
+      animation-duration: 6s;
+    }
+
+    .hearts span:nth-child(2) {
+      left: 25%;
+      animation-duration: 8s;
+    }
+
+    .hearts span:nth-child(3) {
+      left: 40%;
+      animation-duration: 7s;
+    }
+
+    .hearts span:nth-child(4) {
+      left: 55%;
+      animation-duration: 9s;
+    }
+
+    .hearts span:nth-child(5) {
+      left: 70%;
+      animation-duration: 6.5s;
+    }
+
+    .hearts span:nth-child(6) {
+      left: 85%;
+      animation-duration: 8.5s;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* MAIN CARD */
+    .card {
+      position: relative;
+      z-index: 2;
+      width: 88%;
+      max-width: 500px;
+      padding: 30px 20px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 25px;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(8px);
+    }
+
+    .flowers {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .card h1 {
+      font-size: 25px;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    /* BUTTONS */
+    #yesBtn {
+      background: #ff4f81;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 79, 129, 0.7);
+      animation: heartbeat 1.5s infinite;
+      margin: 8px;
+    }
+
+    #noBtn {
+      background: white;
+      color: #ff4d6d;
+      border: 2px solid #ff4d6d;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 8px;
+      transition: 0.2s;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.08);
+      }
+    }
+
+    /* YES SCREEN */
+    .love-message {
+      text-align: center;
+      animation: pop 0.7s ease;
+    }
+
+    .love-message h1 {
+      font-size: 32px;
+      color: #ff4f81;
+      margin: 20px 0;
+    }
+
+    .love-message p {
+      font-size: 18px;
+      line-height: 1.7;
+      margin: 15px 10px;
+    }
+
+    .big-hearts {
+      font-size: 28px;
+      letter-spacing: 8px;
+      animation: heartbeat 1.5s infinite;
+    }
+
+    .forever {
+      font-size: 20px !important;
+      font-weight: bold;
+      color: #ff4f81;
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* YES CELEBRATION */
+    .celebration {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 20;
+    }
+
+    .celebration span {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      font-size: 28px;
+      animation: burst 2.5s ease-out forwards;
+    }
+
+    @keyframes burst {
+      0% {
+        transform: translate(-50%, -50%) scale(0.3);
+        opacity: 1;
+      }
+
+      100% {
+        transform:
+          translate(
+            calc(-50% + var(--x)),
+            calc(-50% + var(--y))
+          )
+          scale(1.4)
+          rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width: 500px) {
+      .card {
+        width: 90%;
+        padding: 25px 15px;
+      }
+
+      .card h1 {
+        font-size: 22px;
+      }
+
+      .love-message h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- FLOATING FLOWERS AND HEARTS -->
+  <div class="hearts">
+    <span>🌸</span>
+    <span>💕</span>
+    <span>🌹</span>
+    <span>🥹</span>
+    <span>💞</span>
+    <span>❤️</span>
+  </div>
+
+  <!-- MAIN LOVE CARD -->
+  <div class="card">
+
+    <div class="flowers">
+      🥹🌸🌹🥀
+    </div>
+
+    <h1>
+      Hey my love 🥹😘
+      <br><br>
+
+      Since this is a website, I thought I should tell you
+      that you're the best thing I have 💖🌸
+
+      <br><br>
+
+      I wanna ask...
+
+      <br>
+
+      Will you marry me, love? 💍❤️
+    </h1>
+
+    <div class="flowers">
+      🌹🌸
+    </div>
+
+    <button id="yesBtn">Yes 😍❤️</button>
+    <button id="noBtn">No 😭</button>
+
+  </div>
+
+  <!-- CELEBRATION CONTAINER -->
+  <div class="celebration" id="celebration"></div>
+
+  <script>
+
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+    const celebration = document.getElementById("celebration");
+
+
+    /* YES BUTTON */
+
+    yesBtn.onclick = function() {
+
+      document.querySelector(".card").innerHTML = `
+
+        <div class="love-message">
+
+          <div class="big-hearts">
+            💖 🌹 💕 🌸 🥹
+          </div>
+
+          <h1>
+            You said yesss babie 😭❤️
+          </h1>
+
+          <p>
+            I knew you were the one, my love 🥹💖
+            <br><br>
+            You just made me the happiest person alive. 🌹
+          </p>
+
+          <div class="big-hearts">
+            🌸 💕 🌹 💖 🌸
+          </div>
+
+          <p class="forever">
+            Forever with you ❤️🥹🌹
+          </p>
+
+        </div>
+      `;
+
+      celebrate();
+    };
+
+
+    /* NO BUTTON RUNS AWAY */
+
+    function moveNoButton() {
+
+      noBtn.style.position = "fixed";
+
+      const maxX =
+        window.innerWidth - noBtn.offsetWidth - 20;
+
+      const maxY =
+        window.innerHeight - noBtn.offsetHeight - 20;
+
+      const randomX =
+        Math.max(10, Math.random() * maxX);
+
+      const randomY =
+        Math.max(10, Math.random() * maxY);
+
+      noBtn.style.left = randomX + "px";
+      noBtn.style.top = randomY + "px";
+    }
+
+
+    /* COMPUTER */
+
+    noBtn.addEventListener("mouseover", function() {
+      moveNoButton();
+    });
+
+
+    /* PHONE */
+
+    noBtn.addEventListener("touchstart", function(event) {
+
+      event.preventDefault();
+
+      moveNoButton();
+
+    });
+
+
+    /* LOVE CELEBRATION */
+
+    function celebrate() {
+
+      const emojis = [
+        "❤️",
+        "💕",
+        "💖",
+        "💗",
+        "💘",
+        "🌹",
+        "🌸",
+        "🥹"
+      ];
+
+      for (let i = 0; i < 30; i++) {
+
+        const item = document.createElement("span");
+
+        item.innerText =
+          emojis[Math.floor(Math.random() * emojis.length)];
+
+        item.style.setProperty(
+          "--x",
+          (Math.random() * 700 - 350) + "px"
+        );
+
+        item.style.setProperty(
+          "--y",
+          (Math.random() * 700 - 350) + "px"
+        );
+
+        item.style.animationDelay =
+          (Math.random() * 0.4) + "s";
+
+        celebration.appendChild(item);
+
+        setTimeout(function() {
+          item.remove();
+        }, 3000);
+      }
+    }
+
+  </script>
+
+</body>
+</html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  
+</body>
+
+</html>
