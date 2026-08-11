@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Eddie ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  color: white;
+  background:
+    radial-gradient(circle at 20% 20%, #35105f 0%, transparent 30%),
+    radial-gradient(circle at 80% 80%, #061f52 0%, transparent 35%),
+    linear-gradient(135deg, #02020d, #09001c, #020b25);
+  position: relative;
+}
+
+/* STARS */
+.stars,
+.stars::before,
+.stars::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(2px 2px at 10% 20%, white, transparent),
+    radial-gradient(1px 1px at 25% 70%, white, transparent),
+    radial-gradient(2px 2px at 40% 35%, white, transparent),
+    radial-gradient(1px 1px at 60% 15%, white, transparent),
+    radial-gradient(2px 2px at 75% 55%, white, transparent),
+    radial-gradient(1px 1px at 90% 25%, white, transparent),
+    radial-gradient(2px 2px at 85% 85%, white, transparent),
+    radial-gradient(1px 1px at 15% 90%, white, transparent);
+  background-size: 350px 350px;
+  animation: starsMove 18s linear infinite;
+}
+
+.stars::before {
+  opacity: .5;
+  transform: scale(1.5);
+  animation-duration: 30s;
+}
+
+.stars::after {
+  opacity: .3;
+  transform: scale(2);
+  animation-duration: 45s;
+}
+
+@keyframes starsMove {
+  from { transform: translateY(0); }
+  to { transform: translateY(-350px); }
+}
+
+/* PLANETS */
+.planet {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: .8;
+}
+
+.planet.one {
+  width: 90px;
+  height: 90px;
+  top: 7%;
+  left: -25px;
+  background: radial-gradient(circle at 30% 30%, #ffb6e6, #7b24c8 55%, #220044);
+  box-shadow: 0 0 35px #9c43ff;
+  animation: floatOne 8s ease-in-out infinite;
+}
+
+.planet.two {
+  width: 55px;
+  height: 55px;
+  bottom: 10%;
+  right: -10px;
+  background: radial-gradient(circle at 35% 30%, #8de8ff, #164bb3 60%, #03133f);
+  box-shadow: 0 0 30px #168dff;
+  animation: floatTwo 10s ease-in-out infinite;
+}
+
+@keyframes floatOne {
+  50% { transform: translate(35px, 30px) rotate(180deg); }
+}
+
+@keyframes floatTwo {
+  50% { transform: translate(-30px, -25px) rotate(-180deg); }
+}
+
+/* MAIN CARD */
+.card {
+  position: relative;
+  z-index: 5;
+  width: min(90%, 520px);
+  margin: 30px auto;
+  padding: 28px 20px;
+  text-align: center;
+  border-radius: 28px;
+  background: rgba(8, 8, 30, .78);
+  border: 1px solid rgba(255, 255, 255, .2);
+  box-shadow:
+    0 0 30px rgba(167, 76, 255, .35),
+    inset 0 0 30px rgba(255, 255, 255, .03);
+  backdrop-filter: blur(12px);
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: clamp(28px, 8vw, 46px);
+  text-shadow: 0 0 18px #ff55bb;
+}
+
+.subtitle {
+  color: #ffd8f2;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* PHOTO */
+.eddie-photo {
+  width: 180px !important;
+  max-width: 75vw !important;
+  height: auto !important;
+  max-height: 230px !important;
+  object-fit: cover !important;
+  display: block !important;
+  margin: 18px auto !important;
+  border-radius: 20px !important;
+  border: 3px solid rgba(255,255,255,.75);
+  box-shadow: 0 0 25px rgba(255, 76, 190, .65);
+}
+
+/* BUTTON */
+.more-btn {
+  border: none;
+  padding: 13px 25px;
+  border-radius: 999px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff2f92, #8b35ff);
+  box-shadow: 0 0 20px rgba(255, 47, 146, .45);
+  transition: .25s;
+}
+
+.more-btn:hover {
+  transform: scale(1.06);
+}
+
+.more {
+  display: none;
+  margin-top: 22px;
+  animation: appear .7s ease;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FLOATING HEARTS */
+.heart {
+  position: fixed;
+  bottom: -30px;
+  font-size: 22px;
+  pointer-events: none;
+  z-index: 2;
+  animation: rise linear forwards;
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% { opacity: 1; }
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* AUDIO */
+audio {
+  width: 100%;
+  max-width: 330px;
+  margin-top: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+<div class="planet one"></div>
+<div class="planet two"></div>
+
+<div class="card">
+
+  <h1>For Eddie ❤️</h1>
+
+  <div class="subtitle">
+    📸🌹<br>
+    EDDI'S PHOTO
+  </div>
+
+  <img
+    src="IMG-20260801-WA0031.jpg"
+    alt="Eddie's Photo"
+    class="eddie-photo"
+  >
+
+  <br>
+
+  <button class="more-btn" id="moreBtn">
+    There is more ❤️
+  </button>
+
+  <div class="more" id="more">
+    <h2>🌌 You mean more than words can say 🌌</h2>
+
+    <p>
+      Some people come into your life and somehow make
+      everything feel a little more special. ❤️
+    </p>
+
+    <p>
+      So here's a little piece of my heart,
+      floating somewhere between the stars. 🪐✨
+    </p>
+
+    <p>
+      Keep smiling. Keep shining. And never forget
+      how special you are. ❤️🌹
+    </p>
+
+    <audio controls loop>
+      <source
+        src="DJ Neptune Joeboy _ Mr Eazi Nobody (Slowed reverb)(M4A_128K).m4a"
+        type="audio/mp4"
+      >
+      Your browser does not support this audio.
+    </audio>
+
+    <p>🎵❤️🌌</p>
+  </div>
+
+</div>
+
+<script>
+const moreBtn = document.getElementById("moreBtn");
+const more = document.getElementById("more");
+
+moreBtn.addEventListener("click", function() {
+  more.style.display = "block";
+  moreBtn.style.display = "none";
+});
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+
+  const hearts = ["❤️", "💖", "💕", "💗", "🌹", "✨"];
+  heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 10000);
+}
+
+setInterval(createHeart, 700);
+</script>
+
+</body>
+  </html>
